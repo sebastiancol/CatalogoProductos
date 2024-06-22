@@ -14,6 +14,7 @@
                 <div class="card-header">
                     <h3 class="card-title text-center">BUSQUEDA INFORMACION </h3>
                     <input class="form-control me-2" type="search" placeholder="buscar producto" aria-label="Search">
+                    
                     <div class="form-group">
                         <label for="gen"></label>
                         <select requiered name="genero" class="custom-select mb-1 form-control">
@@ -22,6 +23,8 @@
                             <option selected value=""></option>                                                                    
                             
                         </select>
+                        <div id="root"></div>
+                       
                     </div>
                     <a href="{{ route('getlist')}}"><button class="btn btn-outline-success" type="submit" name="search">BUSCAR</button></a>
  

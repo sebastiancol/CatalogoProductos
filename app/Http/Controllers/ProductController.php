@@ -6,6 +6,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
+
 class ProductController extends Controller
 {
     /**
@@ -13,7 +14,8 @@ class ProductController extends Controller
      */
     public function index()
     {   
-        $response = HTTP::get('https://fakestoreapi.com/products');
+        
+        /* $response = HTTP::get('https://fakestoreapi.com/products');
         $product=json_decode($response->body());
         foreach($product as $p){
 
@@ -24,9 +26,21 @@ class ProductController extends Controller
             $product->description=$p->description;
             $product->image=$p->image;
             $product->save();
-        }
+        }*/
         
         return view('welcome');
+
+       /* $response2 = HTTP::get('https://fakestoreapi.com/products/categories');
+        $products=json_decode($response2->body());
+        foreach($products as $key ){
+            
+            $products=new Product();
+            $products->category=$key;
+            $products->save();
+        }*/
+        
+       // return Http::get('https://fakestoreapi.com/products/categories')[0];
+
     }
 
     /**
